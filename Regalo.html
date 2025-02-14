@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentín</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: "Arial", sans-serif;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-style: italic;
+            font-size: 32px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 12px 24px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .btn-si {
+            background-color: #ff4b5c;
+            color: white;
+        }
+        .btn-si:hover {
+            background-color: #ff1e3c;
+        }
+        .btn-no {
+            background-color: white;
+            color: #ff4b5c;
+            border: 2px solid #ff4b5c;
+        }
+        .btn-no:hover {
+            background-color: #ff4b5c;
+            color: white;
+        }
+        .heart-container {
+            display: none;
+            margin-top: 50px;
+        }
+        .top-message {
+            font-size: 24px;
+            font-style: italic;
+            color: #ff1e3c;
+            margin-bottom: 10px;
+        }
+        .best-gf {
+            font-size: 26px;
+            font-weight: bold;
+            color: #ff2e5b;
+            margin-bottom: 20px;
+        }
+        .heart {
+            width: 320px;
+            height: 320px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            animation: latir 1s infinite alternate;
+        }
+        @keyframes latir {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        .heart svg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        .heart img {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            clip-path: circle(45%);
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff1e3c;
+        }
+        .facu {
+            font-size: 22px;
+            font-style: italic;
+            font-weight: bold;
+            color: black;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Querés ser mi San Valentín otro año más?</h1>
+    <div class="buttons">
+        <button class="btn btn-si" id="btnSi">Sí</button>
+        <button class="btn btn-no" id="btnNo">No</button>
+    </div>
+
+    <div class="heart-container" id="heartContainer">
+        <div class="top-message">Feliz San Valentín, te amo mucho mi amor 💖</div>
+        <div class="best-gf">Sos la mejor novia del universo🌍</div>
+
+        <div class="heart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#ff1e3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21s-6-4.6-9-9a5 5 0 0 1 7-7c1.4 1.4 2 2 2 2s.6-.6 2-2a5 5 0 0 1 7 7c-3 4.4-9 9-9 9z"/>
+            </svg>
+            <img src="fotoregalo.jpeg" alt="Nuestra foto" id="loveImage">
+        </div>
+
+        <div class="message">Te amo mi amorcito lindoooo</div>
+        <div class="facu">Facu</div>
+    </div>
+
+    <script>
+        const btnSi = document.getElementById("btnSi");
+        const btnNo = document.getElementById("btnNo");
+        const heartContainer = document.getElementById("heartContainer");
+
+        let siSize = 20;
+
+        btnNo.addEventListener("click", () => {
+            siSize += 12;
+            btnSi.style.fontSize = siSize + "px";
+            btnSi.style.padding = (siSize / 2) + "px";
+        });
+
+        btnSi.addEventListener("click", () => {
+            document.querySelector(".buttons").style.display = "none";
+            heartContainer.style.display = "block";
+        });
+    </script>
+</body>
+</html>
